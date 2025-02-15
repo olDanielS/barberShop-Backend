@@ -44,7 +44,7 @@ class SigninUserService{
             email:user.email,
             endereco:user?.endereco,
             token:TOKEN,
-            sunscriptions: user.subscriptions ? {
+            subscriptions: user.subscriptions ? {
                 id: user?.subscriptions.id,
                 status: user?.subscriptions.status
             } : null

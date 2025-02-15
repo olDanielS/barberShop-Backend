@@ -38,9 +38,6 @@ class CreateUserService{
         })
 
         return user;
-
-
-        return {OK: true}
     }
 }
 
