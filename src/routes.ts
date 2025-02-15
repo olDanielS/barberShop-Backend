@@ -1,7 +1,10 @@
 import { Router, Request, Response } from "express";
 
 import {CreateUserController} from './Controllers/user/createUserController';
-import { SigninUserControler } from "./Controllers/user/SigninUserControler";
+import { SigninUserController } from "./Controllers/user/SigninUserControler";
+import { DetailUserController } from "./Controllers/user/DetailsUserControler";
+
+import { isAutheticated } from "./middlewares/isAutheticated";
 
 const router = Router();
 
@@ -11,6 +14,8 @@ router.get("/", (req: Request, res: Response) => {
 
 // -- USER ROUTES -- 
 router.post("/users", new CreateUserController().handle)
-router.post("/auth", new SigninUserControler().handle)
+router.post("/auth", new SigninUserController().handle)
+router.get("/me",isAutheticated, new DetailUserController().handle)
+
 
 export {router};

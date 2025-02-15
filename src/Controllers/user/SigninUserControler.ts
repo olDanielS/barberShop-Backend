@@ -3,7 +3,7 @@ import {Request, Response} from 'express';
 import { SigninUserService } from "../../Services/user/SigninUserService";
 
 
-class SigninUserControler{
+class SigninUserController{
     async handle(req:Request, res:Response){
 
     const signinUserService =  new SigninUserService(); 
@@ -17,4 +17,4 @@ class SigninUserControler{
     }
 }
 
-export {SigninUserControler};
+export {SigninUserController};

@@ -43,7 +43,11 @@ class SigninUserService{
             name:user.name,
             email:user.email,
             endereco:user?.endereco,
-            token:TOKEN
+            token:TOKEN,
+            sunscriptions: user.subscriptions ? {
+                id: user?.subscriptions.id,
+                status: user?.subscriptions.status
+            } : null
         }
 
     }
