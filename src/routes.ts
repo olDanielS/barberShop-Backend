@@ -12,6 +12,7 @@ import { CheckSubscriptionController } from "./Controllers/haircut/CheckSubscrip
 
 import { NewScheduleController } from "./Controllers/haircut/schedule/NewScheduleController";
 import { ListScheduleController } from "./Controllers/haircut/schedule/ListScheduleController";
+import { FinishScheduleController } from "./Controllers/haircut/schedule/FinishScheduleController";
 
 import { isAutheticated } from "./middlewares/isAutheticated";
 
@@ -36,6 +37,7 @@ router.get("/subscription", isAutheticated, new CheckSubscriptionController().ha
 //Schedule ROUTES
 router.post("/schedule", isAutheticated, new NewScheduleController().handle)
 router.get("/schedule", isAutheticated, new ListScheduleController().handle)
+router.delete("/schedule", isAutheticated, new FinishScheduleController().handle)
 
 
 export {router};
